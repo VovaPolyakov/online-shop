@@ -13,6 +13,8 @@ a {
 
 * {
   box-sizing: border-box;
+  padding: 0px;
+  margin: 0px;
 }
 
 @media (prefers-color-scheme: dark) {
