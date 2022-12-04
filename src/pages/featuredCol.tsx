@@ -1,5 +1,6 @@
 import Head from 'next/head'
-import styles from '../../styles/Home.module.scss'
+import Link from 'next/link'
+import styles from '../styles/Home.module.scss'
 
 export default function Home() {
   return (
@@ -13,6 +14,7 @@ export default function Home() {
       <div className={styles.container}>
         <div className={styles.row}>
             <h1 className={styles.title}>Featured Collection</h1>
+            <Link href='/products/posters'>
             <div className={styles.painting}>
                 <img src='https://cdn.shopify.com/s/files/1/0684/1457/0804/collections/48f117ea-1b8a-4033-addd-c16e9a709b3d.png?v=1669230233' alt='painting'></img>
                 <p className={styles.text}>Motivational Posters
@@ -21,6 +23,8 @@ export default function Home() {
                 </svg>
                 </p>
             </div>
+            </Link>
+            <Link href='/products/hoodies'>
             <div className={styles.hoodie}>
                 <img src='https://cdn.shopify.com/s/files/1/0684/1457/0804/collections/image.png?v=1669218127&width=750' alt='hoody'></img>
                 <p className={styles.text}>Winter Hoodie Collections
@@ -29,6 +33,7 @@ export default function Home() {
                     </svg>
                 </p>
             </div>
+            </Link>
         </div>
       </div>
     </section>
