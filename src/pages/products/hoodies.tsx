@@ -23,6 +23,57 @@ const hoodies = () => {
                   <p className={styles.card__price}>£ 39.99 GBP</p>
                 </div>
               </div>
+              <div className={styles.card}>
+                <div className={styles.card__img}>
+                  <img  alt='img' src='https://cdn.shopify.com/s/files/1/0684/1457/0804/products/image_31086985-d9e4-4bef-a23e-882c9ce41472.png?v=1669277501&width=990'></img>
+                </div>
+                <button className={styles.card__button}>Sale</button>
+                <div className={styles.card_information}>
+                  <p>Premium Hoodie V1</p>
+                  <p className={styles.card__price}>£ 39.99 GBP</p>
+                </div>
+              </div>
+              <div className={styles.card}>
+                <div className={styles.card__img}>
+                  <img  alt='img' src='https://cdn.shopify.com/s/files/1/0684/1457/0804/products/image_31086985-d9e4-4bef-a23e-882c9ce41472.png?v=1669277501&width=990'></img>
+                </div>
+                <button className={styles.card__button}>Sale</button>
+                <div className={styles.card_information}>
+                  <p>Premium Hoodie V1</p>
+                  <p className={styles.card__price}>£ 39.99 GBP</p>
+                </div>
+              </div>
+              <div className={styles.card}>
+                <div className={styles.card__img}>
+                  <img  alt='img' src='https://cdn.shopify.com/s/files/1/0684/1457/0804/products/image_31086985-d9e4-4bef-a23e-882c9ce41472.png?v=1669277501&width=990'></img>
+                </div>
+                <button className={styles.card__button}>Sale</button>
+                <div className={styles.card_information}>
+                  <p>Premium Hoodie V1</p>
+                  <p className={styles.card__price}>£ 39.99 GBP</p>
+                </div>
+              </div>
+              <div className={styles.card}>
+                <div className={styles.card__img}>
+                  <img  alt='img' src='https://cdn.shopify.com/s/files/1/0684/1457/0804/products/image_31086985-d9e4-4bef-a23e-882c9ce41472.png?v=1669277501&width=990'></img>
+                </div>
+                <button className={styles.card__button}>Sale</button>
+                <div className={styles.card_information}>
+                  <p>Premium Hoodie V1</p>
+                  <p className={styles.card__price}>£ 39.99 GBP</p>
+                </div>
+              </div>
+              <div className={styles.card}>
+                <div className={styles.card__img}>
+                  <img  alt='img' src='https://cdn.shopify.com/s/files/1/0684/1457/0804/products/image_31086985-d9e4-4bef-a23e-882c9ce41472.png?v=1669277501&width=990'></img>
+                </div>
+                <button className={styles.card__button}>Sale</button>
+                <div className={styles.card_information}>
+                  <p>Premium Hoodie V1</p>
+                  <p className={styles.card__price}>£ 39.99 GBP</p>
+                </div>
+              </div>
+              
           </div>
       </div>
     </div>
