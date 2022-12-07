@@ -1,13 +1,18 @@
-import React from 'react'
+import React, { useState } from 'react'
 import menu from '../menu/menu'
 import styles from '../../styles/Home.module.scss'
 import Link from 'next/link'
+import Modal from '../../components/Modal/Modal'
+
 
 const NavBar = () => {
+  const [modalActive,setModalActive] = useState(false)
   return (
     <nav className={styles.nav}>
+        <Modal active={modalActive} setActive={setModalActive}/>
         <div className={styles.container}>
           <div className={styles.row}>
+            <div onClick={() => setModalActive(true)} className={styles.burger}><span></span></div>
             <Link href='/'><div className={styles.logo}></div></Link>
             <ul className={styles.menu}>
               {menu.map((item:any,itx:number) =>  (

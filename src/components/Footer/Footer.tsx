@@ -21,7 +21,7 @@ export default function Home() {
                     ))}
                 </div>
             </div>
-            <div className={styles.info} style={{width: '600px'}}>
+            <div className={styles.info}>
                 <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.
                      Quas laboriosam ex quis sequi deserunt nobis molestias nisi repudiandae,
                      sed, enim perferendis adipisci eveniet quisquam dicta,

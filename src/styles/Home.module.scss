@@ -6,11 +6,101 @@
 .nav{
   width: 100%;
   background-color: black;
+    .modal{
+      height: 100vh;
+      position: fixed;
+      top: 0;
+      left: 0;
+      display: none;
+      width: 300px;
+      background-color: black;
+      z-index: 1;
+    }
+    .modal_active{
+      height: 100vh;
+      background-color: black;
+      position: fixed;
+      display: block;
+      top: 0;
+      left: 0;
+      width: 250px;
+      z-index: 999;
+    }
+    .modal_content{
+      padding: 20px 0 20px 20px ;
+      border-radius: 12px;
+      background: black;
+      width: 200px;
+      height: 100vh;
+      margin: 0;
+      .modal_info{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .modal_title{
+          font-size: 30px;
+        }
+        .cross{
+          font-size: 30px;
+        }
+      }
+      .modal_menu{
+
+        li{
+          list-style: none;
+          margin: 10px 0;
+        }
+      }
+    }
     .row{
       padding: 30px 0 15px 0 ;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      .burger{
+        width: 30px;
+        height: 20px;
+        cursor: pointer;
+        position: absolute;
+        z-index: 1;
+        display: none;
+      }
+      .burger span, .burger span:after, .burger span::before{
+        width: 100%;
+        height: 5px;
+        background: #ffff;
+        transition: .3s;
+        border-radius: 5px;
+        position: absolute;
+      }
+      .burger span:before{
+        content: '';
+        top: -10px;
+        transition: top 300ms 300ms,transform 300ms cubic-bezier(0.23,1 , 0.32 ,1);
+      }
+      .burger span{
+        top: 10px;
+      }
+      .burger span:after{
+        content: '';
+        bottom: -10px;
+        transition: top 300ms 300ms, transform 300ms  cubic-bezier( 0.23, 1 ,0.32,1);
+      }
+      .burger span.active:before{
+        content: '';
+        top: 0;
+        transform: rotate(45deg);
+        transition: top 300ms , transform 300ms 300ms cubic-bezier( 0.68, -0.55,0,1.55);
+      }
+      .burger span.active:after{
+        content: '';
+        bottom: 0;
+        transform: rotate(-45deg);
+        transition: top 300ms , transform 300ms 300ms cubic-bezier( 0.68, -0.55,0,1.55);
+      }
+      .burger span.active{
+        background: rgba(255, 255, 255, 0);
+      }
       .logo{
         width: 20px;
         height: 30px;
@@ -56,34 +146,21 @@
 main{
 
   .collection{
-    height: max-content;
-    img{
-      width: 100%;
-      height: 100%;
-    }
     margin-top: 100px;
     .title{
       font-size: 40px;
       margin-right: 50px;
     }
     .row{
-      display: flex;
-      width: 100%;
-      align-items: center;
       margin-top: 50px;
-      justify-content: center;
-      flex-wrap: wrap;
-        img{
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(350px, 1fr));
+      align-items: center;
+      gap: 20px;
+        .painting img, .hoodie img{
           cursor: pointer;
-        }
-        .painting img{
-          margin-right: 20px;
-          height: 590px;
-          width: 530px;
-        }
-        .hoodie img {
-          height: 590px;
-          width: 530px;
+          width: 100%;
+          height: 100%;
         }
         .arrow{
           margin: 5px 0 0 10px;
@@ -107,7 +184,8 @@ main{
   .row{
     display: flex;
     justify-content: space-between;
-    .links{ 
+    .links{
+      width: 50%;
       p{
         font-size: 25px;
         font-weight: bold;
@@ -122,6 +200,44 @@ main{
         &:hover{
             border-bottom: 1px solid white;
         }
+      }
+    }
+    .img{
+      width: 50%;
+      text-align: right;
+    }
+    .info{
+      width: 50%;
+    }
+  }
+}
+
+@media screen and (max-width: 1100px){
+  .nav{
+    .row{
+      .burger{
+        display: block;
+      }
+    }
+  }
+  .menu{
+    display: none;
+    .item{
+      display: none;
+    }
+  }
+  .logo{
+    display: none;
+  }
+  .footer{
+    .row{
+      flex-direction: column;
+      align-items: center;
+      .info{
+        margin: 30px 0 ;
+      }
+      .img{
+        text-align: left;
       }
     }
   }
