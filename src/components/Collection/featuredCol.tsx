@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import Link from 'next/link'
-import styles from '../styles/Home.module.scss'
-import hoodie from '../public/hoodie.png'
+import styles from '../../styles/Home.module.scss'
+import hoodie from '../../public/hoodie.png'
 import Image from 'next/image'
 
 export default function Home() {
@@ -15,7 +15,7 @@ export default function Home() {
       <div className={styles.container}>
         <div className={styles.row}>
             <h1 className={styles.title}>Featured Collection</h1>
-            <Link href='/products/posters' >
+            <Link href='/collection/posters' >
               <div className={styles.painting}>
                   <img src='https://cdn.shopify.com/s/files/1/0684/1457/0804/collections/48f117ea-1b8a-4033-addd-c16e9a709b3d.png?v=1669230233' alt='painting'></img>
                   <p className={styles.text}>Motivational Posters
@@ -25,7 +25,7 @@ export default function Home() {
                   </p>
                 </div>
             </Link>
-            <Link href='/products/hoodies'>
+            <Link href='/collection/hoodies'>
               <div  className={styles.hoodie}>
                     <Image priority  src={hoodie} alt='hoodie'></Image>
                     <p className={styles.text}>Winter Hoodie Collections

@@ -8,10 +8,6 @@ const menu:any = [
         link: 'allproducts',
     },
     {
-        name: 'Search',
-        link: 'search',
-    },
-    {
         name: 'About us',
         link: 'aboutus',
     },
