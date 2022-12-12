@@ -77,14 +77,16 @@
                         margin-top: 10px;
 
                         .product__quantity__input{
-                            padding: 10px 20px ;
                             background: transparent;
                             border: none;
                             font-size: 20px;
                             outline: none;
+                            padding:7px 10px ;
                         }
                         .product__quantity__count{
-                            padding: 0 10px;
+                            width: 50px;
+                            text-align: center;
+                            padding: 7px 10px;
                         }
                     }
                 }

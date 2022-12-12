@@ -42,7 +42,7 @@ const ProductInfo = ({product}:any) => {
               <button className={styles.product__price__button}>Sale</button>
             </div>
             <div className={styles.product__order__size}>
-              <h1>Title</h1>
+              <h1>Size</h1>
               <div className={styles.product__size}>
                 <button className={styles.product__size__button}>XS</button>
                 <button className={styles.product__size__button}>S</button>
