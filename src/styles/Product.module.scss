@@ -51,16 +51,21 @@
                             margin-right: 20px;
                             padding: 5px 15px;
                             background-color: transparent;
-                            border:1px solid white;
-                            color:white;
+                            border:1px solid black;
+                            color:black;
                             border-radius: 10px;
                             font-weight:500;
                             cursor: pointer;
                         }
-                        .product__size__button .active{
-                            background-color: white;
-                            border:1px solid white;
-                            color:black;
+                        .product__size__button__active{
+                            margin-right: 20px;
+                            padding: 5px 15px;
+                            background-color: black;
+                            border:1px solid black;
+                            color:white;
+                            border-radius: 10px;
+                            font-weight:500;
+                            cursor: pointer;
 
                         }
                     }

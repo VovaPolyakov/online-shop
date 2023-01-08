@@ -37,6 +37,8 @@ interface CartItem {
 
 export default function ProductInfo({product}:Props): React.ReactElement{
   const [quantity,setQuantity] = useState(1)
+  const [productSizeButton,setProductSizeButton] = useState('product__size__button')
+  
 
   const handleClick = (event:any) => {
       if(event.target.value == '+'){
@@ -82,6 +84,9 @@ export default function ProductInfo({product}:Props): React.ReactElement{
       }
       localStorage.setItem('cart',JSON.stringify(cart))
       console.log('cart',cart)
+    }'product__size__button__active'
+
+    const changeSize = (e:any) => {
     }
   return (
     <section className={styles.product}>
@@ -101,8 +106,7 @@ export default function ProductInfo({product}:Props): React.ReactElement{
               <div className={styles.product__size}>
                 {product.size.map((variant:any,itx:any) => (
                   <div key={itx}>
-                    <input type='checkbox'></input>
-                    <label>{variant}</label>
+                    <button className={styles.product__size__button} onClick={changeSize}>{variant}</button>
                   </div>
                 ))}
               </div>
