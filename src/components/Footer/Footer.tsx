@@ -30,7 +30,7 @@ export default function Home() {
                 </p>
             </div>
             <div className={styles.img}>
-                <Image src='https://cdn.shopify.com/s/files/1/0684/1457/0804/files/pexels-vinicius-neves-6440487.jpg?v=1668867701&width=190' alt='img'></Image>
+              <img src='https://cdn.shopify.com/s/files/1/0684/1457/0804/files/pexels-vinicius-neves-6440487.jpg?v=1668867701&width=380'></img>
             </div>
         </div>
       </div>
