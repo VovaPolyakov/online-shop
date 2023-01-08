@@ -150,7 +150,6 @@ main{
     margin-top: 100px;
     .title{
       font-size: 40px;
-      margin-right: 50px;
       width: 100%;
     }
     .row{
@@ -165,12 +164,12 @@ main{
           height: 100%;
         }
         .arrow{
-          margin: 5px 0 0 10px;
+          margin: 5px 0 0 0 ;
           height: 40px;
           width: 60px;
         }
         .text{
-          margin:20px 0 0 20px;
+          margin:20px 0 0 0;
           font-size:25px;
           display: flex;
           align-items: center;
