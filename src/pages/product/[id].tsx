@@ -100,7 +100,7 @@ export default function ProductInfo({product}:Props): React.ReactElement{
               <div className={styles.product__size__text}>Size</div>
               <div className={styles.product__size}>
                 {product.size.map((variant:any,itx:any) => (
-                  <div>
+                  <div key={itx}>
                     <input type='checkbox'></input>
                     <label>{variant}</label>
                   </div>

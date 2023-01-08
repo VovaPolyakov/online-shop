@@ -11,7 +11,7 @@ interface DisplayCart {
 
 }
 
-const cart = () => {
+const Cart = () => {
     const [cartItems,setCartItems] = useState<DisplayCart[]>([])
     const [isEmpty,setIsEmpty] = useState<boolean>(false)
     const [total,setTotal] = useState<number>(0)
@@ -68,14 +68,14 @@ const cart = () => {
         <div>Total: {total}</div>
         {isEmpty ? <h1>Your cart is empty.</h1> : 
             <div>
-                {cartItems.map(item => (item.inStock ? <div>
+                {cartItems.map((item,itx) => (item.inStock ? <div key={itx}>
                     <div>{item.name}</div>
                     <div>{item.price}</div>
                     <div>{item.qty}</div>
                     <button onClick={() => removeItem(item.id)}>Remove</button>
                 </div>
                     :
-                    <div>Item {item.name} was in stock when you added in Cart but now it is out of stock</div>
+                    <div key={itx}>Item {item.name} was in stock when you added in Cart but now it is out of stock</div>
                     ))
                 }
             </div>
@@ -84,4 +84,4 @@ const cart = () => {
   );
 }
 
-export default cart;
+export default Cart;

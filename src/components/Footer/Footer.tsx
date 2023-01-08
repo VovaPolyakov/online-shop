@@ -2,6 +2,7 @@ import Head from 'next/head'
 import Link from 'next/link'
 import styles from '../../styles/Home.module.scss'
 import menu from '../menu/menu'
+import Image from 'next/image'
 
 export default function Home() {
   return (
@@ -29,7 +30,7 @@ export default function Home() {
                 </p>
             </div>
             <div className={styles.img}>
-                <img src='https://cdn.shopify.com/s/files/1/0684/1457/0804/files/pexels-vinicius-neves-6440487.jpg?v=1668867701&width=190' alt='img'></img>
+                <Image src='https://cdn.shopify.com/s/files/1/0684/1457/0804/files/pexels-vinicius-neves-6440487.jpg?v=1668867701&width=190' alt='img'></Image>
             </div>
         </div>
       </div>
