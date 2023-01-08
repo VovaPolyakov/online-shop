@@ -6,7 +6,7 @@
         margin: 0 auto;
         .row{
             display: grid;
-            grid-template-columns: repeat(auto-fit,minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit,minmax(450px, 1fr));
             gap: 50px;
             .product__image{
                 img{
@@ -15,9 +15,9 @@
                 }
             }
             .product__info{
-                padding: 40px;
+                padding: 30px;
                 .product__title{
-                    font-size: 40px;
+                    font-size: 60px;
                     margin-bottom: 10px;
 
                 }
@@ -30,9 +30,9 @@
                         margin-right: 10px;
                     }
                     .product__price__button{
-                        padding: 5px 9px;
+                        padding: 5px 13px;
                         background-color: white;
-                        border: none;
+                        border: 1px solid black;
                         color:black;
                         border-radius: 10px;
                         font-weight:500;
@@ -40,9 +40,8 @@
                     }
                 }
                 .product__order__size{
-                    h1{
+                    .product__size__text{
                         font-size: 14px;
-                        opacity: 0.5;
                         margin-bottom: 10px;
                     }
                     .product__size{
@@ -50,13 +49,19 @@
                         flex-wrap: wrap;
                         .product__size__button{
                             margin-right: 20px;
-                            padding: 5px 13px;
-                            background-color: white;
-                            border: none;
-                            color:black;
+                            padding: 5px 15px;
+                            background-color: transparent;
+                            border:1px solid white;
+                            color:white;
                             border-radius: 10px;
                             font-weight:500;
                             cursor: pointer;
+                        }
+                        .product__size__button .active{
+                            background-color: white;
+                            border:1px solid white;
+                            color:black;
+
                         }
                     }
                 }
@@ -66,15 +71,15 @@
                     flex-direction: column;
                     .product__quantity__title{
                         font-size: 14px;
-                        opacity: 0.5;
                     }
                     .product__quantity__info{
                         display: flex;
                         flex-direction: row;
                         align-items: center;
-                        border: 1px solid white;
                         width: max-content;
+                        border: 1px solid black;
                         margin-top: 10px;
+                        
 
                         .product__quantity__input{
                             background: transparent;
@@ -82,12 +87,40 @@
                             font-size: 20px;
                             outline: none;
                             padding:7px 10px ;
+                            color: black;
                         }
                         .product__quantity__count{
-                            width: 50px;
+                            width: 70px;
                             text-align: center;
-                            padding: 7px 10px;
+                            padding: 9.5px 10px;
                         }
+                    }
+                }
+                .product__addToCart{
+                    margin-top: 40px;
+                    background: transparent;
+                    font-weight: 600;
+                    font-size: 30;
+                    width: 300px;
+                    padding: 10px;
+                    border:1px solid black;
+                    cursor: pointer;
+                    color: black;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 714px){
+    .product{
+        .container{
+            max-width: 90%;
+            .row{
+                grid-template-columns: repeat(auto-fit,minmax(300px, 1fr));
+                .product__info{
+                    .product__addToCart{
+                        width: 100%;
                     }
                 }
             }

@@ -1,4 +1,5 @@
 import React,{useState} from 'react'
+import { v4 as uuidv4 } from 'uuid';
 
 import hoodies from '../../components/hoodies/hoodies'
 import styles from '../../styles/Product.module.scss'
@@ -7,15 +8,34 @@ import Image from 'next/image'
 
 export async function getServerSideProps(context:any) {
 
-
   const product = hoodies.find(x => x.name.toLowerCase().replaceAll(' ', '-') == context.query.id)
   return {
     props:{product}
   }
 }
+interface Product{
+  id: number,
+  image: string,
+  name:string,
+  price:number,
+  size:any,
+  stock:number,
+
+}
+interface Props { 
+  product:Product;
+  products:Product[]
+}
+interface CartItem {
+  cid: string;
+  products:Array<{
+    id:number;
+    qty:number;
+  }>;
+}
 
 
-const ProductInfo = ({product}:any) => {
+export default function ProductInfo({product}:Props): React.ReactElement{
   const [quantity,setQuantity] = useState(1)
 
   const handleClick = (event:any) => {
@@ -27,6 +47,41 @@ const ProductInfo = ({product}:any) => {
           setQuantity(quantity - 1)
         }
       }
+    }
+    let cart:CartItem
+
+    function addToCart():void {
+      const cs = localStorage.getItem('cart');
+
+      let isAdded = false
+      if(!cs){
+        cart = {
+          cid: uuidv4(),
+          products:[{
+             id: product.id,
+             qty: quantity,
+          }]
+        }
+      }
+      else{
+        cart = JSON.parse(cs)
+        cart.products = cart.products.map(ci => { 
+          if(ci.id == product.id)
+          {
+            isAdded = true
+            return {id:ci.id,qty: ci.qty + 1}
+          }
+          return {id:ci.id,qty: ci.qty }
+        })
+        if(!isAdded){
+          cart.products.push({
+            id:product.id,
+            qty: quantity
+          })
+        }
+      }
+      localStorage.setItem('cart',JSON.stringify(cart))
+      console.log('cart',cart)
     }
   return (
     <section className={styles.product}>
@@ -42,12 +97,14 @@ const ProductInfo = ({product}:any) => {
               <button className={styles.product__price__button}>Sale</button>
             </div>
             <div className={styles.product__order__size}>
-              <h1>Size</h1>
+              <div className={styles.product__size__text}>Size</div>
               <div className={styles.product__size}>
-                <button className={styles.product__size__button}>XS</button>
-                <button className={styles.product__size__button}>S</button>
-                <button className={styles.product__size__button}>M</button>
-                <button className={styles.product__size__button}>L</button>
+                {product.size.map((variant:any,itx:any) => (
+                  <div>
+                    <input type='checkbox'></input>
+                    <label>{variant}</label>
+                  </div>
+                ))}
               </div>
             </div>
             <div className={styles.product__quantity}>
@@ -58,11 +115,10 @@ const ProductInfo = ({product}:any) => {
                   <input type="button" className={styles.product__quantity__input} onClick={handleClick}  value="+"></input>
                 </div>
             </div>
+            <button onClick={addToCart} className={styles.product__addToCart}>Add to cart</button>
           </div>
         </div>
       </div>
     </section>
   )
 }
-
-export default ProductInfo

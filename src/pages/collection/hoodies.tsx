@@ -4,6 +4,8 @@ import Image from 'next/image'
 import hoodie from '../../components/hoodies/hoodies'
 import Link from 'next/link'
 
+
+
 const hoodies = () => {
   return (
     <main>

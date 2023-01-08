@@ -1,11 +1,22 @@
 html,
 body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: 'Fira Sans', sans-serif;
 }
-
+h1,h2,h3,p{
+  font-family: 'Fira Sans', sans-serif;
+}
+::-webkit-scrollbar {
+  width: 7px;
+  background-color: #f9f9fd;
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: #aeaeae;
+}
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: 5px 5px 5px -5px rgba(34, 60, 80, 0.2) inset;
+  background-color: #f9f9fd;
+}
 a {
   color: inherit;
   text-decoration: none;
@@ -22,7 +33,7 @@ a {
     color-scheme: dark;
   }
   body {
-    color: white;
-    background: black;
+    color: black;
+    background: white;
   }
 }
