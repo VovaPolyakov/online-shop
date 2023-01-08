@@ -60,7 +60,15 @@ const Cart = () => {
             cid:cartId,
             products: newCart.map(item => ({id:item.id,qty:item.qty}))
         }
-        localStorage.setItem('cart',JSON.stringify(cart))
+        if(cart.products.length === 0){
+            setIsEmpty(true)
+            localStorage.removeItem('cart')
+            setTotal(0)
+        }
+        else{
+            localStorage.setItem('cart',JSON.stringify(cart))
+        }
+        console.log(cart.products.length === 0)
 
     }
   return (
