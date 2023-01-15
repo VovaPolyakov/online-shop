@@ -1,6 +1,7 @@
 html,
 body {
   font-family: 'Fira Sans', sans-serif;
+
 }
 h1,h2,h3,p{
   font-family: 'Fira Sans', sans-serif;
@@ -38,7 +39,7 @@ a {
     color-scheme: dark;
   }
   body {
-    color: black;
-    background: white;
+    color: #fafafa;
+    background: #111;
   }
 }

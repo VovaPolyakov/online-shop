@@ -29,6 +29,8 @@ interface Props {
 interface CartItem {
   cid: string;
   products:Array<{
+    size:string;
+    img:string;
     id:number;
     qty:number;
   }>;
@@ -62,21 +64,25 @@ export default function ProductInfo({product}:Props): React.ReactElement{
           products:[{
              id: product.id,
              qty: quantity,
+             img:product.image,
+             size: 'M',
           }]
         }
       }
       else{
         cart = JSON.parse(cs)
-        cart.products = cart.products.map(ci => { 
+        cart.products= cart.products.map(ci => { 
           if(ci.id == product.id)
           {
             isAdded = true
-            return {id:ci.id,qty: ci.qty + 1}
+            return {id:ci.id,qty: ci.qty + 1,size:'M'}
           }
-          return {id:ci.id,qty: ci.qty }
+          return {id:ci.id,qty: ci.qty,size:'M' }
         })
         if(!isAdded){
           cart.products.push({
+            img:product.image,
+            size: 'M',
             id:product.id,
             qty: quantity
           })
@@ -84,7 +90,7 @@ export default function ProductInfo({product}:Props): React.ReactElement{
       }
       localStorage.setItem('cart',JSON.stringify(cart))
       console.log('cart',cart)
-    }'product__size__button__active'
+    }
 
     const changeSize = (e:any) => {
     }

@@ -1,0 +1,30 @@
+.container{
+    width: 90%;
+    margin: 0 auto;
+}
+
+.product{
+    width: 80%;
+    margin: 0 auto;
+    height: 170px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 50px;
+    margin-top: 50px;
+    padding: 10px 30px;
+    border-radius: 10px;
+    box-shadow:3px 8px 10px 20px rgba(0,0,0,0.25),5px 5px 5px 5px rgba(0,0,0,0.22);
+    .product_img{
+        height: 100%;
+        width: 160px;
+        img{
+            width: 100%;
+            height: 100%;
+        }
+
+    }
+    .product_remove{
+        padding: 5px;
+    }
+}

@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from 'react'
-import products from '../components/hoodies/hoodies'
+import styles from '../styles/Cart.module.scss'
+import Image from 'next/image'
 
 
-interface DisplayCart {
+interface DisplayCart { 
     id: number,
+    img:string,
+    size:string,
     price: number,
     qty: number,
     inStock: boolean
@@ -40,10 +43,13 @@ const Cart = () => {
         let cartItemArray = cart.products.map((cartItem: {
             id:number;
             qty:number;
+            size:string;
         }) => {
             const product = products.filter(p => p.id == cartItem.id)
             return {
                 id: cartItem.id ,
+                img:product[0].image,
+                size:cartItem.size,
                 name: product[0].name,
                 price: product[0].price,
                 qty: cartItem.qty,
@@ -68,19 +74,22 @@ const Cart = () => {
         else{
             localStorage.setItem('cart',JSON.stringify(cart))
         }
-        console.log(cart.products.length === 0)
-
     }
   return (
-    <div>
-        <div>Total: {total}</div>
+    <div className={styles.container}>
+        <div>Subtotal: {total}</div>
         {isEmpty ? <h1>Your cart is empty.</h1> : 
             <div>
-                {cartItems.map((item,itx) => (item.inStock ? <div key={itx}>
-                    <div>{item.name}</div>
-                    <div>{item.price}</div>
-                    <div>{item.qty}</div>
-                    <button onClick={() => removeItem(item.id)}>Remove</button>
+                {cartItems.map((item,itx) => (item.inStock ? 
+                <div className={styles.product} key={itx}>
+                    <div className={styles.product_img}>
+                        <Image alt='product' src={item.img}></Image>
+                    </div>
+                    <div className={styles.product_name}>{item.name}</div>
+                    <div className={styles.product_price}>{item.price}</div>
+                    <div className={styles.product_price}>Size: {item.size}</div>
+                    <div className={styles.product_qty}>{item.qty}</div>
+                    <button className={styles.product_remove} onClick={() => removeItem(item.id)}>Remove</button>
                 </div>
                     :
                     <div key={itx}>Item {item.name} was in stock when you added in Cart but now it is out of stock</div>

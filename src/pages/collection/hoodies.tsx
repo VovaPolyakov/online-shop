@@ -1,7 +1,6 @@
 import React from 'react'
 import styles from '../../styles/Hoodies.module.scss'
 import Image from 'next/image'
-import hoodie from '../../components/hoodies/hoodies'
 import Link from 'next/link'
 
 
@@ -19,7 +18,7 @@ const hoodies = () => {
               <p>Filter</p> 
             </div>
             <div className={styles.row}>
-              {hoodie.map((item:any,itx:any) => (
+              {/* {hoodie.map((item:any,itx:any) => (
                 <Link key={itx} href={`/product/${item.name.toLowerCase().replaceAll(' ', '-')}`}>
                    <div className={styles.card}>
                     <div className={styles.card__img}>
@@ -32,7 +31,7 @@ const hoodies = () => {
                     </div>
                   </div>
                 </Link>
-              ))}
+              ))} */}
             </div>
         </div>
       </section>

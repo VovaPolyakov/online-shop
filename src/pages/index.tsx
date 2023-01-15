@@ -3,7 +3,8 @@ import FeaturedCollection from '../components/Collection/featuredCol'
 
 
 
-export default function Home() {
+
+const Home = () => {
   return (
     <main>
       <Head>
@@ -18,3 +19,5 @@ export default function Home() {
     </main>
   )
 }
+
+export default Home

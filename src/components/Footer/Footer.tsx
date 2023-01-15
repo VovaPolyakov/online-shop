@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import Link from 'next/link'
 import styles from '../../styles/Home.module.scss'
-import menu from '../menu/menu'
+import menu from '../Menu/menu'
 import Image from 'next/image'
 
 export default function Home() {

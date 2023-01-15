@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import menu from '../menu/menu'
+import menu from '../Menu/menu'
 import styles from '../../styles/Home.module.scss'
 import Link from 'next/link'
 import Modal from '../../components/Modal/Modal'

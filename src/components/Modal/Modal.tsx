@@ -1,7 +1,7 @@
 import React from 'react'
 import styles from '../../styles/Home.module.scss'
 import Link from 'next/link'
-import menu from '../menu/menu'
+import menu from '../Menu/menu'
 
 const Modal = ({active, setActive}:any) => {
   return (
