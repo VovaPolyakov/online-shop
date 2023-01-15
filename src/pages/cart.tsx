@@ -2,8 +2,7 @@ import React, { useEffect, useState } from 'react'
 import styles from '../styles/Cart.module.scss'
 import Image from 'next/image'
 
-
-interface DisplayCart { 
+interface DisplayCart {
     id: number,
     img:string,
     size:string,
@@ -45,7 +44,7 @@ const Cart = () => {
             qty:number;
             size:string;
         }) => {
-            const product = products.filter(p => p.id == cartItem.id)
+            const product = cart.products.filter(({id}: {id: number}) => id == cartItem.id)
             return {
                 id: cartItem.id ,
                 img:product[0].image,
@@ -78,9 +77,9 @@ const Cart = () => {
   return (
     <div className={styles.container}>
         <div>Subtotal: {total}</div>
-        {isEmpty ? <h1>Your cart is empty.</h1> : 
+        {isEmpty ? <h1>Your cart is empty.</h1> :
             <div>
-                {cartItems.map((item,itx) => (item.inStock ? 
+                {cartItems.map((item,itx) => (item.inStock ?
                 <div className={styles.product} key={itx}>
                     <div className={styles.product_img}>
                         <Image alt='product' src={item.img}></Image>

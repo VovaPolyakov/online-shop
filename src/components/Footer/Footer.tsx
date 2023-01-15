@@ -1,8 +1,7 @@
 import Head from 'next/head'
 import Link from 'next/link'
 import styles from '../../styles/Home.module.scss'
-import menu from '../Menu/menu'
-import Image from 'next/image'
+import menu from '../menu/menu'
 
 export default function Home() {
   return (
@@ -14,24 +13,24 @@ export default function Home() {
       </Head>
       <div className={styles.container}>
         <div className={styles.row}>
-            <div className={styles.links}>
-                <p>Quick links</p>
-                <div>
-                    {menu.map((item:any,itx:number) => (
-                        <Link href={item.link}  key={itx}><li className={styles.link} key={itx}>{item.name}</li></Link>
-                    ))}
-                </div>
+          <div className={styles.links}>
+            <p>Quick links</p>
+            <div>
+              {menu.map((item: any, itx: number) => (
+                <Link href={item.link} key={itx}><li className={styles.link} key={itx}>{item.name}</li></Link>
+              ))}
             </div>
-            <div className={styles.info}>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                     Quas laboriosam ex quis sequi deserunt nobis molestias nisi repudiandae,
-                     sed, enim perferendis adipisci eveniet quisquam dicta,
-                      debitis ut dolorem ratione dolorum.
-                </p>
-            </div>
-            <div className={styles.img}>
-              <img src='https://cdn.shopify.com/s/files/1/0684/1457/0804/files/pexels-vinicius-neves-6440487.jpg?v=1668867701&width=380'></img>
-            </div>
+          </div>
+          <div className={styles.info}>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+              Quas laboriosam ex quis sequi deserunt nobis molestias nisi repudiandae,
+              sed, enim perferendis adipisci eveniet quisquam dicta,
+              debitis ut dolorem ratione dolorum.
+            </p>
+          </div>
+          <div className={styles.img}>
+            <img src='https://cdn.shopify.com/s/files/1/0684/1457/0804/files/pexels-vinicius-neves-6440487.jpg?v=1668867701&width=380'></img>
+          </div>
         </div>
       </div>
     </footer>
