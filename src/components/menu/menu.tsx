@@ -5,32 +5,32 @@ const menu:any = [
     },
     {
         name: 'All products',
-        link: 'allproducts',
+        link: '/products',
     },
     {
         name: 'About us',
-        link: 'aboutus',
+        link: '/aboutus',
     },
     {
         name: 'Contact us',
-        link: 'contactus',
+        link: '/contactus',
     },
     {
         name: 'Privacy Police',
-        link: 'privacypolice',
+        link: '/privacypolice',
     },
     {
         name: 'Refund Policy',
-        link: 'refundpolicy',
+        link: '/refundpolicy',
     },
     {
         name: 'Terms of Service',
-        link: 'termsofservice',
+        link: '/termsofservice',
     },
     {
         name: 'Shipping Policy',
-        link: 'shippingpolicy',
+        link: '/shippingpolicy',
     },
 ];
 
-export default menu 
+export default menu
