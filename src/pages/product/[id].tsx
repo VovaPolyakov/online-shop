@@ -1,14 +1,14 @@
 import React,{useState} from 'react'
 import { v4 as uuidv4 } from 'uuid';
 
-import hoodies from '../../components/hoodies/hoodies'
+// import hoodies from '../../components/hoodies/hoodies'
 import styles from '../../styles/Product.module.scss'
 import Image from 'next/image'
 
 
 export async function getServerSideProps(context:any) {
 
-  const product = hoodies.find(x => x.name.toLowerCase().replaceAll(' ', '-') == context.query.id)
+  const product: Product[] = []; //hoodies.find(x => x.name.toLowerCase().replaceAll(' ', '-') == context.query.id)
   return {
     props:{product}
   }
@@ -22,7 +22,7 @@ interface Product{
   stock:number,
 
 }
-interface Props { 
+interface Props {
   product:Product;
   products:Product[]
 }
@@ -40,7 +40,7 @@ interface CartItem {
 export default function ProductInfo({product}:Props): React.ReactElement{
   const [quantity,setQuantity] = useState(1)
   const [productSizeButton,setProductSizeButton] = useState('product__size__button')
-  
+
 
   const handleClick = (event:any) => {
       if(event.target.value == '+'){
@@ -71,13 +71,13 @@ export default function ProductInfo({product}:Props): React.ReactElement{
       }
       else{
         cart = JSON.parse(cs)
-        cart.products= cart.products.map(ci => { 
-          if(ci.id == product.id)
+        cart.products= cart.products.map(({img, id, qty}) => {
+          if(id == product.id)
           {
             isAdded = true
-            return {id:ci.id,qty: ci.qty + 1,size:'M'}
+            return {img, id , qty: qty + 1, size:'M'}
           }
-          return {id:ci.id,qty: ci.qty,size:'M' }
+          return {img, id, qty, size:'M' }
         })
         if(!isAdded){
           cart.products.push({
