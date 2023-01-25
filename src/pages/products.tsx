@@ -11,6 +11,6 @@ export const getServerSideProps: GetStaticProps<{ products: Products[]}> = async
  
 export default function Page({products}: InferGetStaticPropsType<typeof getServerSideProps>) {
   return <ul>
-    {products.map(({name}) => <li>{name}</li>)}
+    {products.map(({name}) => <li key={name}>{name}</li>)}
   </ul>
 }
